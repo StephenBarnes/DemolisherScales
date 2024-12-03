@@ -1,0 +1,15 @@
+{
+	"name": "DemolisherScales",
+	"version": "1.0.0",
+	"title": "Demolisher Scales",
+	"author": "StephenB",
+	"factorio_version": "2.0",
+	"dependencies": [
+		"base >= 2.0",
+		"space-age",
+		"? behemoth-enemies",
+		"? biochemistry",
+		"? demolisher-eggs"
+	],
+	"description": "Demolishers drop scales, needed to craft big miners. Combine with a demolisher breeding mod."
+}
