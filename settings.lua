@@ -14,4 +14,12 @@ data:extend({
         setting_type = "runtime-global",
         default_value = true,
     },
+    {
+        type = "int-setting",
+        name = "DemolisherScales-egg-spoil-seconds-override",
+        order = "2",
+        setting_type = "startup",
+        default_value = 4 * 60, -- 4 minutes.
+        minimum_value = 0,
+    },
 })

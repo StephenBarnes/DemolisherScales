@@ -101,6 +101,13 @@ for _, key in pairs({"segment", "segmented-unit"}) do
 	end
 end
 
+-- Change spoil time of demolisher eggs.
+if settings.startup["DemolisherScales-egg-spoil-seconds-override"].value > 0 then
+	if data.raw.item["demolisher-egg"] ~= nil and data.raw.item["demolisher-egg"].spoil_ticks ~= nil then
+		data.raw.item["demolisher-egg"].spoil_ticks = 60 * settings.startup["DemolisherScales-egg-spoil-seconds-override"].value
+	end
+end
+
 -- TODO possible future feature: add an option to drop a few from minable boulders, etc. on Vulcanus, so you can still do some guerilla tungsten mining at the start.
 
 -- Might be nice to make the big miner tech get unlocked when you find 1 demolisher scale. But doesn't seem possible with how TechnologyTriggers work currently - have to either craft something, or mine 1 specific entity ID.
