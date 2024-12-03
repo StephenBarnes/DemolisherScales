@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 04. 12. 2024
+  Features:
+    - When demolishers die, their corpse boulders are marked for deconstruction automatically. Setting to disable.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.0
 Date: 03. 12. 2024
   Features:

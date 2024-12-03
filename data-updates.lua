@@ -88,4 +88,19 @@ for size, amounts in pairs({
 	end
 end
 
+-- Change the dying trigger effects of demolishers, so we can auto-mark the created boulders for deconstruction.
+for _, key in pairs({"segment", "segmented-unit"}) do
+	for _, segUnit in pairs(data.raw[key]) do
+		if segUnit.dying_trigger_effect ~= nil then
+			for _, effect in pairs(segUnit.dying_trigger_effect) do
+				if effect.type == "create-entity" then
+					effect.trigger_created_entity = true
+				end
+			end
+		end
+	end
+end
+
 -- TODO possible future feature: add an option to drop a few from minable boulders, etc. on Vulcanus, so you can still do some guerilla tungsten mining at the start.
+
+-- Might be nice to make the big miner tech get unlocked when you find 1 demolisher scale. But doesn't seem possible with how TechnologyTriggers work currently - have to either craft something, or mine 1 specific entity ID.
