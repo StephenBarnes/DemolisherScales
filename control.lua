@@ -13,10 +13,14 @@ end
 
 local function onCreatedEntity(event)
 	if not settings.global["DemolisherScales-mark-deconstruction"].value then return end
+	if event.entity == nil or not event.entity.valid then return end
 	if not toDeconstruct[event.entity.name] then return end
 
 	for _, force in pairs(game.forces) do
-		event.entity.order_deconstruction(force)
+		if force ~= nil and force.valid and event.entity.valid then
+				-- Note the check for event.entity.valid is necessary each time because e.g. in Blueprint Sandboxes mod with "auto-build" turned on, it erases entities as soon as one force marks them for deconstruction, then the game crashes when another force tries to also mark it for deconstruction.
+			event.entity.order_deconstruction(force)
+		end
 	end
 end
 
